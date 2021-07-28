@@ -110,11 +110,6 @@ export const ReactEditor = {
     // does not inherit it's prototype from the parent document, therefore we return early
     if (el.ownerDocument !== document) return el.ownerDocument
 
-    if (!(root instanceof Document || root instanceof ShadowRoot))
-      throw new Error(
-        `Unable to find DocumentOrShadowRoot for editor element: ${el}`
-      )
-
     // COMPAT: Only Chrome implements the DocumentOrShadowRoot mixin for
     // ShadowRoot; other browsers still implement it on the Document
     // interface. (2020/08/08)
